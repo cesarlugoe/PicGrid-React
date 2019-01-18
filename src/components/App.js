@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PhotoServer from '../lib/PhotoServer';
 import SearchBar from './SearchBar';
+import ImageList from './ImageList';
 
 
 class App extends Component {
@@ -16,12 +17,12 @@ class App extends Component {
    }
 
    render() {
-
       const { images } = this.state;
+   
       return (
             <div className="ui container" style={{ marginTop: '10px' }}>
                <SearchBar onSubmit={this.onSearchSubmit}/>
-               Found: {images.length} images
+               <ImageList images={images}/>
             </div>
       );
    } 
